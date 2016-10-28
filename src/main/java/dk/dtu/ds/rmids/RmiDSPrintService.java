@@ -5,7 +5,7 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 /**
  *
- * @author AndersTT
+ * @author Anders, Steen & Christoffer
  */
 public interface RmiDSPrintService extends Remote 
 {

@@ -6,7 +6,7 @@ import java.rmi.server.UnicastRemoteObject;
 
 /**
  *
- * @author AndersTT
+ * @author Anders, Steen & Christoffer
  */
 public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrintService
 {

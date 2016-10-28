@@ -7,7 +7,7 @@ import java.rmi.registry.Registry;
 
 /**
  *
- * @author AndersTT
+ * @author Anders, Steen & Christoffer
  */
 public class RmiDSPrintServer 
 {

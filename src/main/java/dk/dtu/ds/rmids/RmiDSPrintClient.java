@@ -9,7 +9,7 @@ import java.rmi.RemoteException;
 
 /**
  *
- * @author AndersTT
+ * @author Anders, Steen & Christoffer
  */
 public class RmiDSPrintClient 
 {
