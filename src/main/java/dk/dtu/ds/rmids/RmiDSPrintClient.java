@@ -17,5 +17,6 @@ public class RmiDSPrintClient
     {
         RmiDSPrintService print = (RmiDSPrintService) Naming.lookup("rmi://localhost:5019/printservice");
         System.out.println("***** " + print.ehco("Printer Ready ") + "*****");
+        //Test
     }
 }
