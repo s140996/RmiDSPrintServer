@@ -7,14 +7,13 @@ package dk.dtu.ds.rmids;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.nio.charset.StandardCharsets;
 import java.security.Key;
+import java.security.MessageDigest;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.Arrays;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 import sun.misc.BASE64Decoder;
@@ -97,6 +96,12 @@ public class AESCrypto {
             String salted = str + salt;
             
             System.out.println("Hash værdi af 'Test med hash' plus salt: " + salted.hashCode());
+            
+//            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+//            byte[] hash = digest.digest(salted.getBytes(StandardCharsets.UTF_8));
+//            String.format("%064x", new java.math.BigInteger(1,hash));
+            Hash hashfunktion = new Hash();
+            System.out.println(hashfunktion.hash(salted));
             
         } catch (Exception e) {
         }

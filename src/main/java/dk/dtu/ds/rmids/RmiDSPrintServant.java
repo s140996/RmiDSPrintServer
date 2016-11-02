@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,6 +20,7 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
 {
     
     AESCrypto aes = new AESCrypto("ljksdf9342kjdfs9");
+    Hash shaHash = new Hash();
     String username;
     String password;
     
@@ -118,10 +120,14 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
             System.out.println(users.getUsername());
             if(users.getUsername().equals(username))
             {
-                String saltedPassword = password + users.getSalt();
-                if(users.getPassword().equals(saltedPassword.hashCode()))
-                {
-                    return true;
+                try {
+                    String saltedPassword = password + users.getSalt();
+                    if(users.getPassword().equals(shaHash.hash(saltedPassword)))
+                    {
+                        return true;
+                    }
+                } catch (NoSuchAlgorithmException ex) {
+                    Logger.getLogger(RmiDSPrintServant.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }
