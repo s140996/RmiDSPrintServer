@@ -13,7 +13,7 @@ import sun.misc.BASE64Encoder;
 
 /**
  *
- * @author steen
+ * @author Anders, Steen & Christoffer
  * Source: https://www.youtube.com/watch?v=uxyGJMBs2dI
  */
 public class AESCrypto {

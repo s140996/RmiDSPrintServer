@@ -7,7 +7,7 @@ package dk.dtu.ds.rmids;
 
 /**
  *
- * @author steen
+ * @author Anders, Steen & Christoffer
  */
 public class User {
     
@@ -15,10 +15,19 @@ public class User {
     
     private String password;
     
+    private String salt;
+    
     public User(String username, String password)
     {
         this.password = password;
         this.username = username;
+    }
+    
+    public User(String username, String password, String salt)
+    {
+        this.password = password;
+        this.username = username;
+        this.salt = salt;
     }
     
     public String getUsername()
@@ -31,6 +40,11 @@ public class User {
         return password;
     }
     
+    public String getSalt()
+    {
+        return salt;
+    }
+    
     public void setUsername(String username)
     {
         this.username = username;
@@ -39,5 +53,10 @@ public class User {
     public void setPassword(String password)
     {
         this.password = password;
+    }
+    
+    public void setSalt(String salt)
+    {
+        this.salt = salt;
     }
 }
