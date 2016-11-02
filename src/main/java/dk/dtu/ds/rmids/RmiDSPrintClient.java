@@ -21,6 +21,8 @@ public class RmiDSPrintClient
     private static  String usernameClient;
     private static  String passwordClient;
     private static AESCrypto aes = new AESCrypto("ljksdf9342kjdfs9");
+    private static boolean sessionOn = false;
+    private static int printOperation;
     
     public static void main(String[] args) throws NotBoundException, MalformedURLException, RemoteException 
     {
@@ -41,11 +43,50 @@ public class RmiDSPrintClient
         if(print.login(user) == true)
         {
             System.out.println("Jubiiii");
+            sessionOn = true;
         }
         else
         {
             System.out.println("Wrong password or username!");
             //TypeUsernameAndPassword();
+        }
+        
+        while (sessionOn)
+        {
+            try (Scanner scanner = new Scanner(System.in)) 
+            {
+            System.out.println("Choose Service: ");
+            printOperation = scanner.nextInt();
+            scanner.close();
+            }
+            
+            switch (printOperation)
+            {
+            case 1: print.print("Kageopskrift - Brunkager", "HP Deskjet 8867");
+                    break;
+            
+            case 2: print.queue();
+                    break;
+            
+            case 3: print.topQueue(19);
+                    break;
+                    
+            case 4: print.start();
+                    break;
+            
+            case 5: print.stop();
+                    break;
+            
+            case 6: print.restart();
+                    break;
+            
+            case 7: print.status();
+                    break;
+                    
+            case 8: print.start();
+                    break;
+            }
+            
         }
         
     }
@@ -61,5 +102,5 @@ public class RmiDSPrintClient
             scanner.close();
         }
     }
-
+    
 }
