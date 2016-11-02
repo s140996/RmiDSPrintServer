@@ -81,7 +81,7 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
     }    
 
     @Override
-    public void login(User user) throws RemoteException {
+    public boolean login(User user) throws RemoteException {
         
         try {
             String username = aes.decrypt(user.getUsername());
@@ -92,5 +92,9 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
             Logger.getLogger(RmiDSPrintServant.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+        
+        
+        
+        return false;
     }
 }

@@ -81,17 +81,13 @@ public class AESCrypto {
             
             System.out.println("Decrypted data: " + decData);
             
-            String str = "Test med hash";
+            String str = "password";
             
-            String salt = "1293i09igfkjl4";
-            
-            String salt2 = "kdfgd03oifks0e";
+            String salt = "209f09di3fs";
             
             String salted = str + salt;
             
-            String salted2 = str + salt2;
-            
-            System.out.println("Hash værdi af 'Test med hash' plus salt: " + salted.hashCode() + "     " + salted2.hashCode());
+            System.out.println("Hash værdi af 'Test med hash' plus salt: " + salted.hashCode());
             
         } catch (Exception e) {
         }
