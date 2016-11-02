@@ -7,7 +7,6 @@ import java.rmi.NotBoundException;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
-import rmiProject.User;
 
 /**
  *

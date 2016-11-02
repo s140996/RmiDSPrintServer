@@ -28,5 +28,7 @@ public interface RmiDSPrintService extends Remote
     // *** Prints the value of the parameter on the user's display ***
     public void readConfig(String parameter) throws RemoteException;   
     // *** Sets the parameter to value ***
-    public void setConfig(String parameter, String value) throws RemoteException;   
+    public void setConfig(String parameter, String value) throws RemoteException;  
+    // *** Log in ***
+    public void login(User user) throws RemoteException;
 }

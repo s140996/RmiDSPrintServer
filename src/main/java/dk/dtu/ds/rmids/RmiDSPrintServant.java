@@ -3,6 +3,8 @@ package dk.dtu.ds.rmids;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -10,6 +12,9 @@ import java.rmi.server.UnicastRemoteObject;
  */
 public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrintService
 {
+    
+    AESCrypto aes = new AESCrypto("ljksdf9342kjdfs9");
+    
     public RmiDSPrintServant() throws RemoteException
     {
         super(); 
@@ -74,4 +79,18 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
     {
         
     }    
+
+    @Override
+    public void login(User user) throws RemoteException {
+        
+        try {
+            String username = aes.decrypt(user.getUsername());
+            String password = aes.decrypt(user.getPassword());
+            
+            
+        } catch (Exception ex) {
+            Logger.getLogger(RmiDSPrintServant.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
 }
