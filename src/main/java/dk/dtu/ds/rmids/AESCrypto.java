@@ -5,7 +5,16 @@
  */
 package dk.dtu.ds.rmids;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.security.Key;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 import sun.misc.BASE64Decoder;
@@ -91,5 +100,56 @@ public class AESCrypto {
             
         } catch (Exception e) {
         }
+        
+//        //qwerty
+//        User user1 = new User("Anders","1893950468", "gfdkl229ef0");
+//        //ytrewq
+//        User user2 = new User("Steen","-657510480", "dslæf20995we");
+//        //password
+//        User user3 = new User("Christoffer","-1911362740", "209f09di3fs");
+//        //qwerty
+//        User user4 = new User("Wannabe", "-2092530036", "0954i3jfd093");
+        
+        String fileName = "users.bin";
+        
+        
+          ArrayList<User> userList = new ArrayList<User>();
+//        userList.add(user1);
+//        userList.add(user2);
+//        userList.add(user3);
+//        userList.add(user4);
+//
+//        try { 
+//            ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(fileName));
+//            os.writeObject(userList);
+//            os.close();
+//        } catch (FileNotFoundException ex) {
+//        } catch (IOException ex) {
+//        }
+//        System.out.println("Done writing");
+
+        try {
+          ObjectInputStream is = new ObjectInputStream(new FileInputStream(fileName));
+          userList = (ArrayList<User>) is.readObject();
+        } catch (FileNotFoundException ex) {
+            
+        } catch (IOException ex) {
+        
+        } catch (ClassNotFoundException ex) {
+            
+        }
+        
+        for (User users : userList) {
+            if(users.getUsername().equals("Steen"))
+            {
+                System.out.println("Password = " + users.getPassword());
+            }
+            else
+            {
+                System.out.println(users.getPassword());
+            }
+        }
+        
+        System.out.println("done");
     }
 }

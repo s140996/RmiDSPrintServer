@@ -5,11 +5,13 @@
  */
 package dk.dtu.ds.rmids;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Anders, Steen & Christoffer
  */
-public class User {
+public class User implements Serializable{
     
     private String username;
     
