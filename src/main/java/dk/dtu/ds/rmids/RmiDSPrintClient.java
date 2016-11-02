@@ -21,8 +21,9 @@ public class RmiDSPrintClient
     private static  String usernameClient;
     private static  String passwordClient;
     private static AESCrypto aes = new AESCrypto("ljksdf9342kjdfs9");
-    private static boolean sessionOn = false;
+    private static boolean sessionOn = true;
     private static int printOperation;
+    private static Scanner scanner = new Scanner(System.in);
     
     public static void main(String[] args) throws NotBoundException, MalformedURLException, RemoteException 
     {
@@ -51,14 +52,15 @@ public class RmiDSPrintClient
             //TypeUsernameAndPassword();
         }
         
+        System.out.println("Kom du her til?");
+        
         while (sessionOn)
         {
-            try (Scanner scanner = new Scanner(System.in)) 
-            {
-            System.out.println("Choose Service: ");
+            
+            System.out.println("Choose Service: [4: Start Printer, 5: Stop Printer]");
             printOperation = scanner.nextInt();
-            scanner.close();
-            }
+            
+            
             
             switch (printOperation)
             {
@@ -72,12 +74,15 @@ public class RmiDSPrintClient
                     break;
                     
             case 4: print.start();
+                    System.out.println("The printer was started!");
                     break;
             
             case 5: print.stop();
+                    System.out.println("The printer was stoped!");
                     break;
             
             case 6: print.restart();
+                    System.out.println("The printer was restarted!");
                     break;
             
             case 7: print.status();
@@ -93,14 +98,13 @@ public class RmiDSPrintClient
 
     static void TypeUsernameAndPassword()
     {
-        try (Scanner scanner = new Scanner(System.in)) 
-        {
+        
             System.out.println("Username:");
             usernameClient = scanner.nextLine();
             System.out.println("Password:");
             passwordClient = scanner.nextLine();
-            scanner.close();
-        }
+            
+        
     }
     
 }
