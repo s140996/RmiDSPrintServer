@@ -40,7 +40,7 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
     }
 
     @Override
-    public String queue() 
+    public String queue() throws RemoteException  
     {
         return "Queue";
     }
@@ -89,30 +89,33 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
 
     @Override
     public boolean login(User user) throws RemoteException {
+        System.out.println("HEJ svenne");
         try {
             username = aes.decrypt(user.getUsername());
             password = aes.decrypt(user.getPassword());
-            
+            System.out.println("brugernavn " + username);
+            System.out.println("password " + password);
             
         } catch (Exception ex) {
             Logger.getLogger(RmiDSPrintServant.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("FEJL");
         }
-        
+                
         ArrayList<User> userList = new ArrayList<>();
         String fileName = "user.bin";
         
         try {
           ObjectInputStream is = new ObjectInputStream(new FileInputStream(fileName));
           userList = (ArrayList<User>) is.readObject();
+          is.close();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(RmiDSPrintServant.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(RmiDSPrintServant.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
+        } catch (IOException | ClassNotFoundException ex) {
             Logger.getLogger(RmiDSPrintServant.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         for (User users : userList) {
+            System.out.println(users.getUsername());
             if(users.getUsername().equals(username))
             {
                 String saltedPassword = password + users.getSalt();

@@ -14,7 +14,7 @@ public interface RmiDSPrintService extends Remote
     // *** Prints file filename on the specified printer ***
     public String print(String filename, String printer) throws RemoteException;
     // *** lists the print queue on the user's display in lines of the form <job number>   <file name> ***
-    public String queue();   
+    public String queue() throws RemoteException;
     // *** Moves job to the top of the queue
     public void topQueue(int job) throws RemoteException;   
     // *** Starts the print server ***
