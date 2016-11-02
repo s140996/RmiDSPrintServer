@@ -4,7 +4,6 @@ package dk.dtu.ds.rmids;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-import java.util.ArrayList;
 
 /**
  *
@@ -22,6 +21,8 @@ public class RmiDSPrintServer
         User user2 = new User("Steen","-657510480", "dslæf20995we");
         //password
         User user3 = new User("Christoffer","-1911362740", "209f09di3fs");
+        //qwerty
+        User user4 = new User("Wannabe", "-2092530036", "0954i3jfd093");
     }
     
     

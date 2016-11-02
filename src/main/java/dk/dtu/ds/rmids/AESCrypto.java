@@ -81,9 +81,9 @@ public class AESCrypto {
             
             System.out.println("Decrypted data: " + decData);
             
-            String str = "password";
+            String str = "qwerty";
             
-            String salt = "209f09di3fs";
+            String salt = "0954i3jfd093";
             
             String salted = str + salt;
             
