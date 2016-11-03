@@ -9,6 +9,8 @@ import java.rmi.RemoteException;
  */
 public interface RmiDSPrintService extends Remote 
 {
+    // *** Log in ***
+    public boolean login(User user) throws RemoteException;
     // *** Display message when client is connected ***
     public String ehco(String input) throws RemoteException;
     // *** Prints file filename on the specified printer ***
@@ -29,6 +31,4 @@ public interface RmiDSPrintService extends Remote
     public void readConfig(String parameter) throws RemoteException;   
     // *** Sets the parameter to value ***
     public void setConfig(String parameter, String value) throws RemoteException;  
-    // *** Log in ***
-    public boolean login(User user) throws RemoteException;
 }
