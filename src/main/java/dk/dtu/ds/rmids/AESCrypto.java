@@ -5,14 +5,12 @@
  */
 package dk.dtu.ds.rmids;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import java.security.Key;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 import sun.misc.BASE64Decoder;
@@ -100,16 +98,16 @@ public class AESCrypto {
         } catch (Exception e) {
         }
         
-//       //qwerty
-//        User user1 = new User("Anders","4d1953b6227c93642fb327fb98472cbf6c45670fa67bf282bb68b533f508f017", "gfdkl229ef0");
-//        //ytrewq
-//        User user2 = new User("Steen","943e8b44624bfc43439c13148997397cd7be1f1e517371294b87798cffdb854c", "dslæf20995we");
-//        //password
-//        User user3 = new User("Christoffer","285d4f2e86e928672435fba7356c0dd5a64a0b5440d15992998b6ce8fad5151d", "209f09di3fs");
-//        //qwerty
-//        User user4 = new User("Wannabe", "a1229a6e156af10ceb4ddc2dfa120048a77e7b9caa275a257f01a97dff03d3c5", "0954i3jfd093");
+       //qwerty
+        User user1 = new User("Anders","4d1953b6227c93642fb327fb98472cbf6c45670fa67bf282bb68b533f508f017", "gfdkl229ef0");
+        //ytrewq
+        User user2 = new User("Steen","943e8b44624bfc43439c13148997397cd7be1f1e517371294b87798cffdb854c", "dslæf20995we");
+        //password
+        User user3 = new User("Christoffer","285d4f2e86e928672435fba7356c0dd5a64a0b5440d15992998b6ce8fad5151d", "209f09di3fs");
+        //qwerty
+        User user4 = new User("Wannabe", "a1229a6e156af10ceb4ddc2dfa120048a77e7b9caa275a257f01a97dff03d3c5", "0954i3jfd093");
         
-        String fileName = "users.bin";
+//        String fileName = "users.bin";
         
         
         ArrayList<User> userList = new ArrayList<User>();
@@ -127,18 +125,34 @@ public class AESCrypto {
 //        }
 //        System.out.println("Done writing");
 
-        try {
-          ObjectInputStream is = new ObjectInputStream(new FileInputStream(fileName));
-          userList = (ArrayList<User>) is.readObject();
-          is.close();
-        } catch (FileNotFoundException ex) {
-            
-        } catch (IOException ex) {
+//        try {
+//          ObjectInputStream is = new ObjectInputStream(new FileInputStream(fileName));
+//          userList = (ArrayList<User>) is.readObject();
+//          is.close();
+//        } catch (FileNotFoundException ex) {
+//            
+//        } catch (IOException ex) {
+//        
+//        } catch (ClassNotFoundException ex) {
+//            
+//        }
         
-        } catch (ClassNotFoundException ex) {
-            
+
+        String fileName = "users.txt";
+        
+        try {
+            PrintWriter outputStream = new PrintWriter(fileName);
+            outputStream.println(user1.getUsername() + "," + user1.getPassword() + "," + user1.getSalt());
+            outputStream.println(user2.getUsername() + "," + user2.getPassword() + "," + user2.getSalt());
+            outputStream.println(user3.getUsername() + "," + user3.getPassword() + "," + user3.getSalt());
+            outputStream.println(user4.getUsername() + "," + user4.getPassword() + "," + user4.getSalt());
+            outputStream.close();
+            System.out.println("DONE");
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(AESCrypto.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+
         for (User users : userList) {
             if(users.getUsername().equals("Steen"))
             {
