@@ -2,13 +2,9 @@
 package dk.dtu.ds.rmids;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
@@ -135,7 +131,6 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
         }
         
         for (User users : userList) {
-            System.out.println(users.getUsername());
             if(users.getUsername().equals(username))
             {
                 
