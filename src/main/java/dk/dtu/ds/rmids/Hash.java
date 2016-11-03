@@ -6,6 +6,7 @@
 package dk.dtu.ds.rmids;
 
 import java.security.MessageDigest;
+import sun.misc.BASE64Encoder;
 
 
 /**

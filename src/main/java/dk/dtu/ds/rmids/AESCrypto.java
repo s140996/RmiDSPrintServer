@@ -5,12 +5,7 @@
 */
 package dk.dtu.ds.rmids;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.security.Key;
-import java.util.ArrayList;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 import sun.misc.BASE64Decoder;
@@ -70,5 +65,5 @@ public class AESCrypto {
         Key key = new SecretKeySpec(keyValue,ALGO);
         
         return key;
-    }
+    }            
 }
