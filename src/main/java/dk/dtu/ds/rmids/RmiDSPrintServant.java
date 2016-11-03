@@ -3,11 +3,12 @@ package dk.dtu.ds.rmids;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -91,16 +92,13 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
     
     @Override
     public boolean login(User user) throws RemoteException {
-        System.out.println("HEJ svenne");
+        
         try {
             username = aes.decrypt(user.getUsername());
             password = aes.decrypt(user.getPassword());
-            System.out.println("brugernavn " + username);
-            System.out.println("password " + password);
             
         } catch (Exception ex) {
             Logger.getLogger(RmiDSPrintServant.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("FEJL");
         }
         
         ArrayList<User> userList = new ArrayList<>();
