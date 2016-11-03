@@ -4,7 +4,6 @@ package dk.dtu.ds.rmids;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
-import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -44,7 +43,6 @@ public class RmiDSPrintClient
             
             if(print.login(user) == true)
             {
-                System.out.println("Jubiiii");
                 sessionOn = true;
             }
             else
