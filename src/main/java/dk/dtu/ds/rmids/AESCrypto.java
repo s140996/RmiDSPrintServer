@@ -1,16 +1,16 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+* To change this license header, choose License Headers in Project Properties.
+* To change this template file, choose Tools | Templates
+* and open the template in the editor.
+*/
 package dk.dtu.ds.rmids;
 
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+import java.io.FileReader;
+import java.io.IOException;
 import java.security.Key;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 import sun.misc.BASE64Decoder;
@@ -98,7 +98,7 @@ public class AESCrypto {
         } catch (Exception e) {
         }
         
-       //qwerty
+        //qwerty
         User user1 = new User("Anders","4d1953b6227c93642fb327fb98472cbf6c45670fa67bf282bb68b533f508f017", "gfdkl229ef0");
         //ytrewq
         User user2 = new User("Steen","943e8b44624bfc43439c13148997397cd7be1f1e517371294b87798cffdb854c", "dslæf20995we");
@@ -108,15 +108,15 @@ public class AESCrypto {
         User user4 = new User("Wannabe", "a1229a6e156af10ceb4ddc2dfa120048a77e7b9caa275a257f01a97dff03d3c5", "0954i3jfd093");
         
 //        String fileName = "users.bin";
-        
-        
-        ArrayList<User> userList = new ArrayList<User>();
+
+
+ArrayList<User> userList = new ArrayList<User>();
 //        userList.add(user1);
 //        userList.add(user2);
 //        userList.add(user3);
 //        userList.add(user4);
 //
-//        try { 
+//        try {
 //            ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(fileName));
 //            os.writeObject(userList);
 //            os.close();
@@ -130,40 +130,69 @@ public class AESCrypto {
 //          userList = (ArrayList<User>) is.readObject();
 //          is.close();
 //        } catch (FileNotFoundException ex) {
-//            
+//
 //        } catch (IOException ex) {
-//        
+//
 //        } catch (ClassNotFoundException ex) {
-//            
+//
 //        }
-        
 
-        String fileName = "users.txt";
+
+String fileName = "users.txt";
+
+
+//        try {
+//            PrintWriter outputStream = new PrintWriter(fileName);
+//            outputStream.println(user1.getUsername() + "," + user1.getPassword() + "," + user1.getSalt());
+//            outputStream.println(user2.getUsername() + "," + user2.getPassword() + "," + user2.getSalt());
+//            outputStream.println(user3.getUsername() + "," + user3.getPassword() + "," + user3.getSalt());
+//            outputStream.println(user4.getUsername() + "," + user4.getPassword() + "," + user4.getSalt());
+//            outputStream.close();
+//            System.out.println("DONE");
+//        } catch (FileNotFoundException ex) {
+//            Logger.getLogger(AESCrypto.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+
+BufferedReader br = null;
+String line = "";
+String split = ",";
+
+try {
+    
+    br = new BufferedReader(new FileReader(fileName));
+    while ((line = br.readLine()) != null) {
         
+        // use comma as separator
+        String[] newUser = line.split(split);
+        
+        User user = new User(newUser[0],newUser[1],newUser[2]);
+        userList.add(user);
+    }
+    
+} catch (FileNotFoundException e) {
+    e.printStackTrace();
+} catch (IOException e) {
+    e.printStackTrace();
+} finally {
+    if (br != null) {
         try {
-            PrintWriter outputStream = new PrintWriter(fileName);
-            outputStream.println(user1.getUsername() + "," + user1.getPassword() + "," + user1.getSalt());
-            outputStream.println(user2.getUsername() + "," + user2.getPassword() + "," + user2.getSalt());
-            outputStream.println(user3.getUsername() + "," + user3.getPassword() + "," + user3.getSalt());
-            outputStream.println(user4.getUsername() + "," + user4.getPassword() + "," + user4.getSalt());
-            outputStream.close();
-            System.out.println("DONE");
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(AESCrypto.class.getName()).log(Level.SEVERE, null, ex);
+            br.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        
+    }
+}
+for (User users : userList) {
+    if(users.getUsername().equals("Steen"))
+    {
+        System.out.println("Password = " + users.getPassword());
+    }
+    else
+    {
+        System.out.println(users.getPassword());
+    }
+}
 
-        for (User users : userList) {
-            if(users.getUsername().equals("Steen"))
-            {
-                System.out.println("Password = " + users.getPassword());
-            }
-            else
-            {
-                System.out.println(users.getPassword());
-            }
-        }
-        
-        System.out.println("done");
+System.out.println("done");
     }
 }

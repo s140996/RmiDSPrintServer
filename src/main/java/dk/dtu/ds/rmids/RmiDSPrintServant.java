@@ -1,9 +1,11 @@
 
 package dk.dtu.ds.rmids;
 
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -93,6 +95,12 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
     @Override
     public boolean login(User user) throws RemoteException {
         
+        String fileName = "users.txt";
+        BufferedReader br = null;
+        String line = "";
+        String split = ",";
+        ArrayList<User> userList = new ArrayList<>();
+        
         try {
             username = aes.decrypt(user.getUsername());
             password = aes.decrypt(user.getPassword());
@@ -101,17 +109,29 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
             Logger.getLogger(RmiDSPrintServant.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        ArrayList<User> userList = new ArrayList<>();
-        String fileName = "user.bin";
         
         try {
-            ObjectInputStream is = new ObjectInputStream(new FileInputStream(fileName));
-            userList = (ArrayList<User>) is.readObject();
-            is.close();
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(RmiDSPrintServant.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException | ClassNotFoundException ex) {
-            Logger.getLogger(RmiDSPrintServant.class.getName()).log(Level.SEVERE, null, ex);
+            
+            br = new BufferedReader(new FileReader(fileName));
+            while ((line = br.readLine()) != null) {
+                String[] newUser = line.split(split);
+                
+                User temp = new User(newUser[0],newUser[1],newUser[2]);
+                userList.add(temp);
+            }
+            
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         
         for (User users : userList) {
