@@ -35,7 +35,7 @@ public class AESCrypto {
     public String encrypt(String data) throws Exception
     {
         Key key = generateKey();
-        
+        // ALGO = AES
         Cipher c = Cipher.getInstance(ALGO);
         
         c.init(Cipher.ENCRYPT_MODE, key);

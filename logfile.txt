@@ -1,0 +1,18 @@
+Steen has used method: Login. Time: 1478194281868
+Steen has used method: Print. Time: 1478194283678
+Steen has used method: Restart. Time: 1478194284680
+Steen has used method: Stop. Time: 1478194285383
+Steen has used method: Start. Time: 1478194286085
+Anders has used method: Login. Time: 1478194363033
+Anders has used method: Stop. Time: 1478194365071
+Anders has used method: Top Queue. Time: 1478194365874
+Anders has used method: Print. Time: 1478194366578
+Christoffer has used method: Login. Time: 1478194427968
+Christoffer has used method: Stop. Time: 1478194429471
+Christoffer has used method: Start. Time: 1478194430172
+Christoffer has used method: Print. Time: 1478194430674
+Christoffer has used method: Queue. Time: 1478194431477
+Wannabe has used method: Login. Time: 1478194460267
+Wannabe has used method: Stop. Time: 1478194461701
+Wannabe has used method: Start. Time: 1478194462402
+Wannabe has used method: Print. Time: 1478194463303
