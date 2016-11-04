@@ -149,6 +149,14 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
                     writeLogfile("Login");
                     return true;
                 }
+                else
+                {
+                    try {
+                        Thread.sleep(5000);
+                    } catch(InterruptedException ex) {
+                        Thread.currentThread().interrupt();
+                    }
+                }
             }
         }
         
