@@ -23,8 +23,8 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
     
     AESCrypto aes = new AESCrypto("ljksdf9342kjdfs9");
     Hash shaHash = new Hash();
-    String username;
-    String password;
+    String username = "";
+    String password = "";
     
     public RmiDSPrintServant() throws RemoteException
     {

@@ -17,11 +17,12 @@ import java.util.logging.Logger;
  */
 public class RmiDSPrintClient
 {
-    private static  String usernameClient;
-    private static  String passwordClient;
+    private static  String usernameClient = "";
+    private static  String passwordClient = "";
     private static AESCrypto aes = new AESCrypto("ljksdf9342kjdfs9");
     private static boolean sessionOn = false;
     private static int printOperation;
+    private static int counter = 0;
     private static Scanner scanner = new Scanner(System.in);
     
     public static void main(String[] args) throws NotBoundException, MalformedURLException, RemoteException
@@ -44,6 +45,7 @@ public class RmiDSPrintClient
             if(print.login(user) == true)
             {
                 sessionOn = true;
+                counter = 10;
             }
             else
             {
@@ -52,7 +54,7 @@ public class RmiDSPrintClient
             }
         }
         
-        while (sessionOn)
+        while (sessionOn && counter > 0)
         {
             
             System.out.println("Choose Service: [4: Start Printer, 5: Stop Printer]");
@@ -90,6 +92,7 @@ public class RmiDSPrintClient
                 break;
             }
             
+            counter--;
         }
         
     }
