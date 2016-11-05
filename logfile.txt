@@ -45,3 +45,14 @@ Steen has used method: Print. Time: 1478250517823
 Steen has used method: Print. Time: 1478250518524
 Steen has used method: Print. Time: 1478250519226
 Steen has used method: Print. Time: 1478250519926
+Anders has used method: Login. Time: 1478386512981
+Anders has used method: Start. Time: 1478386528363
+Anders has used method: Stop. Time: 1478386543538
+Anders has used method: Login. Time: 1478387456257
+Anders has used method: Print. Time: 1478387500641
+Anders has used method: Print. Time: 1478387622589
+Anders has used method: Login. Time: 1478387693274
+Anders has used method: Login. Time: 1478387912287
+Anders has used method: Print. Time: 1478387954041
+Anders has used method: Login. Time: 1478388126993
+Anders has used method: Print. Time: 1478388129081

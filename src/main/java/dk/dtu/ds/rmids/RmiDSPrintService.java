@@ -12,7 +12,7 @@ public interface RmiDSPrintService extends Remote
     // *** Log in ***
     public boolean login(User user) throws RemoteException;
     // *** Display message when client is connected ***
-    public String ehco(String input) throws RemoteException;
+    public String startUp(String input) throws RemoteException;
     // *** Prints file filename on the specified printer ***
     public String print(String filename, String printer) throws RemoteException;
     // *** lists the print queue on the user's display in lines of the form <job number>   <file name> ***

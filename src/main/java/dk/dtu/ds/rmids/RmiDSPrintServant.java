@@ -32,7 +32,7 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
     }
     
     @Override
-    public String ehco(String input) throws RemoteException
+    public String startUp(String input) throws RemoteException
     {
         return "From PrintServer: " + input;
     }
@@ -83,18 +83,21 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
     public void status() throws RemoteException
     {
         writeLogfile("Status");
+        System.out.println("Status");
     }
     
     @Override
     public void readConfig(String parameter) throws RemoteException
     {
         writeLogfile("Read Config");
+        System.out.println("Read Config");
     }
     
     @Override
     public void setConfig(String parameter, String value) throws RemoteException
     {
         writeLogfile("Set Config");
+        System.out.println("Set Config");
     }
     
     @Override
