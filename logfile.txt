@@ -56,3 +56,22 @@ Anders has used method: Login. Time: 1478387912287
 Anders has used method: Print. Time: 1478387954041
 Anders has used method: Login. Time: 1478388126993
 Anders has used method: Print. Time: 1478388129081
+Steen has used method: Login. Time: 1478423570770
+Steen has used method: Print. Time: 1478423575486
+Steen has used method: Queue. Time: 1478423584912
+Steen has used method: Top Queue. Time: 1478423592030
+Steen has used method: Start. Time: 1478423596044
+Steen has used method: Stop. Time: 1478423600255
+Steen has used method: Restart. Time: 1478423602562
+Steen has used method: Status. Time: 1478423606772
+Steen has used method: Print. Time: 1478423614089
+Steen has used method: Login. Time: 1478427186093
+Steen has used method: Queue. Time: 1478427191647
+Christoffer has used method: Login. Time: 1478449475662
+Christoffer has used method: Print. Time: 1478449478039
+Christoffer has used method: Restart. Time: 1478449480647
+Christoffer has used method: Start. Time: 1478449481450
+Steen has used method: Login. Time: 1478449843025
+Steen has used method: Print. Time: 1478449857171
+Steen has used method: Login. Time: 1478449919733
+Steen has used method: Print. Time: 1478449925570

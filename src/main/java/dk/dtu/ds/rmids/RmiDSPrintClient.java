@@ -65,7 +65,7 @@ public class RmiDSPrintClient
             System.out.println("*****************************************************************************************************************************************");
             System.out.println("Number of remaining operations in this session: " + counter);
             System.out.println("*****************************************************************************************************************************************");
-            System.out.println("Choose Service: [1: Print, 2: Queue, 3: Top Queue, 4: Start Printer, 5: Stop Printer, 6: Restart, 7: Status, 8: Read Config, 9: Set Config]");
+            System.out.println("Choose Service: [1: Print, 2: Queue, 3: Top Queue, 4: Start Printer, 5: Stop Printer, 6: Restart, 7: Status, 8: Read Config, 9: Set Config, 10: Log-off]");
             
             printOperation = scanner.nextInt();
             System.out.println("*****************************************************************************************************************************************");
@@ -78,30 +78,36 @@ public class RmiDSPrintClient
                 break;
                 
                 case 2: print.queue();
-                        System.out.println("The print queue is empty");
+                System.out.println("The print queue is empty");
                 break;
                 
                 case 3: print.topQueue(19);
-                        System.out.println("The print job was moved to the top of the queue");
+                System.out.println("The print job was moved to the top of the queue");
                 break;
                 
                 case 4: print.start();
-                        System.out.println("The printer was started!");
+                System.out.println("The printer was started!");
                 break;
                 
                 case 5: print.stop();
-                        System.out.println("The printer was stoped!");
+                System.out.println("The printer was stoped!");
                 break;
                 
                 case 6: print.restart();
-                        System.out.println("The printer was restarted!");
+                System.out.println("The printer was restarted!");
                 break;
                 
                 case 7: print.status();
-                        System.out.println("No status available!");
+                System.out.println("No status available!");
                 break;
                 
-                case 8: 
+                case 8:
+                break;
+                    
+                case 9:
+                break;
+                    
+                case 10: sessionOn = false;
                 break;
             }
             
@@ -111,11 +117,11 @@ public class RmiDSPrintClient
     }
     
     static void TypeUsernameAndPassword()
-    {   
+    {
         System.out.println("Username:");
         usernameClient = scanner.nextLine();
         System.out.println("Password:");
-        passwordClient = scanner.nextLine();   
+        passwordClient = scanner.nextLine();
     }
     
 }
