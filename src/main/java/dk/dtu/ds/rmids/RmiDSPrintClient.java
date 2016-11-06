@@ -73,8 +73,7 @@ public class RmiDSPrintClient
             
             switch (printOperation)
             {
-                case 1: print.print(filename, printername);
-                        System.out.println(filename + " Was printed on: " + printername);
+                case 1: System.out.println(print.print(filename, printername));
                 break;
                 
                 case 2: print.queue();

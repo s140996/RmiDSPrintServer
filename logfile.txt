@@ -75,3 +75,5 @@ Steen has used method: Login. Time: 1478449843025
 Steen has used method: Print. Time: 1478449857171
 Steen has used method: Login. Time: 1478449919733
 Steen has used method: Print. Time: 1478449925570
+Steen has used method: Login. Time: 1478451298931
+Steen has used method: Print. Time: 1478451300410

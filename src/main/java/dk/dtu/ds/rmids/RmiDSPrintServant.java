@@ -41,7 +41,7 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
     public String print(String filename, String printer) throws RemoteException
     {
         writeLogfile("Print");
-        return "Filename: " + filename + "  -  " + "Printername: " + printer;
+        return "Filename: " + filename + " was printed on: " + "Printername: " + printer;
     }
     
     @Override
