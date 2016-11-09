@@ -41,7 +41,8 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
     @Override
     public String print(String filename, String printer) throws RemoteException
     {
-        if (access != null && access.isPrint())
+        System.out.println("Må der printes? " + access.isPrint());
+        if (access != null && access.isPrint() == true)
         {
             writeLogfile("Print");
             return "Filename: " + filename + " was printed on: " + "Printername: " + printer;
@@ -69,7 +70,7 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
     @Override
     public void topQueue(int job) throws RemoteException
     {
-        if (access != null && access.isTopQueue())
+        if (access != null && access.isTopQueue() == true)
         {
             writeLogfile("Top Queue");
             System.out.println("Top Queue");
@@ -167,7 +168,8 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
     @Override
     public boolean login(User user) throws RemoteException {
         
-        String fileName = "users.txt";
+        String userfileName = "users.txt";
+        String accessfileName = "AccessControlList.txt";
         BufferedReader br = null;
         String line = "";
         String split = ",";
@@ -185,7 +187,7 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
         
         try {
             
-            br = new BufferedReader(new FileReader(fileName));
+            br = new BufferedReader(new FileReader(userfileName));
             while ((line = br.readLine()) != null) {
                 String[] newUser = line.split(split);
                 
@@ -209,11 +211,12 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
         
         try {
             
-            br = new BufferedReader(new FileReader("AccessControl"));
+            br = new BufferedReader(new FileReader(accessfileName));
             while ((line = br.readLine()) != null) {
                 String[] newAccess = line.split(split);
                 
                 AccessControl temp = new AccessControl(newAccess[0], Boolean.parseBoolean(newAccess[1]), Boolean.parseBoolean(newAccess[2]), Boolean.parseBoolean(newAccess[3]), Boolean.parseBoolean(newAccess[4]), Boolean.parseBoolean(newAccess[5]), Boolean.parseBoolean(newAccess[6]), Boolean.parseBoolean(newAccess[7]), Boolean.parseBoolean(newAccess[8]), Boolean.parseBoolean(newAccess[9]));
+                System.out.println(newAccess[0] + "     " + newAccess[1] + "    " + newAccess[2] + "      " + newAccess[3]);
                 accessList.add(temp);
             }
             
@@ -228,6 +231,14 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+            }
+        }
+        
+        for(AccessControl a : accessList){
+            System.out.println(a.getUsername());
+            if(a.getUsername().equals(username))
+            {
+                access = new AccessControl(a.getUsername(), a.isPrint(), a.isQueue(), a.isTopQueue(), a.isStart(), a.isStop(), a.isRestart(), a.isStatus(), a.isReadConfig(), a.isSetConfig());
             }
         }
         
@@ -252,12 +263,6 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
             }
         }
         
-        for(AccessControl a : accessList){
-            if(a.getUsername().equals(username))
-            {
-                access = a;
-            }
-        }
         
         return false;
     }
