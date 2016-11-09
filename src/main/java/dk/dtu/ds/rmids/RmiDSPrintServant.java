@@ -23,6 +23,7 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
     
     AESCrypto aes = new AESCrypto("ljksdf9342kjdfs9");
     Hash shaHash = new Hash();
+    AccessControl access;
     String username = "";
     String password = "";
     
@@ -40,64 +41,127 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
     @Override
     public String print(String filename, String printer) throws RemoteException
     {
-        writeLogfile("Print");
-        return "Filename: " + filename + " was printed on: " + "Printername: " + printer;
+        if (access != null && access.isPrint())
+        {
+            writeLogfile("Print");
+            return "Filename: " + filename + " was printed on: " + "Printername: " + printer;
+        }
+        else
+        {            
+            return "Access Denied";
+        }
     }
     
     @Override
     public String queue() throws RemoteException
     {
-        writeLogfile("Queue");
-        return "Queue";
+        if (access != null && access.isQueue())
+        {
+            writeLogfile("Queue");
+            return "Queue";
+        }
+        else
+        {
+           return "Access Denied!"; 
+        }
     }
     
     @Override
     public void topQueue(int job) throws RemoteException
     {
-        writeLogfile("Top Queue");
-        System.out.println("topQueue");
+        if (access != null && access.isTopQueue())
+        {
+            writeLogfile("Top Queue");
+            System.out.println("Top Queue");
+        }
+        else
+        {
+            System.out.println("Access Denied!"); 
+        }
     }
     
     @Override
     public void start() throws RemoteException
     {
-        writeLogfile("Start");
-        System.out.println("Start");
+        if (access != null && access.isStart())
+        {
+            writeLogfile("Start");
+            System.out.println("Start");
+        }
+        else
+        {
+            System.out.println("Access Denied!"); 
+        }
     }
     
     @Override
     public void stop() throws RemoteException
     {
-        writeLogfile("Stop");
-        System.out.println("Stop");
+        if (access != null && access.isStop())
+        {
+            writeLogfile("Stop");
+            System.out.println("Stop");
+        }
+        else
+        {
+            System.out.println("Access Denied!"); 
+        }
     }
     
     @Override
     public void restart() throws RemoteException
     {
-        writeLogfile("Restart");
-        System.out.println("Restart");
+        if (access != null && access.isRestart())
+        {
+            writeLogfile("Restart");
+            System.out.println("Restart");
+        }
+        else
+        {
+            System.out.println("Access Denied!"); 
+        }
     }
     
     @Override
     public void status() throws RemoteException
     {
-        writeLogfile("Status");
-        System.out.println("Status");
+        if (access != null && access.isStatus())
+        {
+            writeLogfile("Status");
+            System.out.println("Status");
+        }
+        else
+        {
+            System.out.println("Access Denied!"); 
+        }
     }
     
     @Override
     public void readConfig(String parameter) throws RemoteException
     {
-        writeLogfile("Read Config");
-        System.out.println("Read Config");
+        if (access != null && access.isReadConfig())
+        {
+            writeLogfile("Read Config");
+            System.out.println("Read Config");
+        }
+        else
+        {
+            System.out.println("Access Denied!"); 
+        }
     }
     
     @Override
     public void setConfig(String parameter, String value) throws RemoteException
     {
-        writeLogfile("Set Config");
-        System.out.println("Set Config");
+        if (access != null && access.isSetConfig())
+        {
+            writeLogfile("Set Config");
+            System.out.println("Set Config");
+        }
+        else
+        {
+            System.out.println("Access Denied!"); 
+        }
     }
     
     @Override
@@ -108,6 +172,7 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
         String line = "";
         String split = ",";
         ArrayList<User> userList = new ArrayList<>();
+        ArrayList<AccessControl> accessList = new ArrayList<>();
         
         try {
             username = aes.decrypt(user.getUsername());
@@ -142,6 +207,30 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
             }
         }
         
+        try {
+            
+            br = new BufferedReader(new FileReader("AccessControl"));
+            while ((line = br.readLine()) != null) {
+                String[] newAccess = line.split(split);
+                
+                AccessControl temp = new AccessControl(newAccess[0], Boolean.parseBoolean(newAccess[1]), Boolean.parseBoolean(newAccess[2]), Boolean.parseBoolean(newAccess[3]), Boolean.parseBoolean(newAccess[4]), Boolean.parseBoolean(newAccess[5]), Boolean.parseBoolean(newAccess[6]), Boolean.parseBoolean(newAccess[7]), Boolean.parseBoolean(newAccess[8]), Boolean.parseBoolean(newAccess[9]));
+                accessList.add(temp);
+            }
+            
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        
         for (User users : userList) {
             if(users.getUsername().equals(username))
             {
@@ -160,6 +249,13 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
                         Thread.currentThread().interrupt();
                     }
                 }
+            }
+        }
+        
+        for(AccessControl a : accessList){
+            if(a.getUsername().equals(username))
+            {
+                access = a;
             }
         }
         
