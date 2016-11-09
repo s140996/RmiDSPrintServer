@@ -65,5 +65,18 @@ public class AESCrypto {
         Key key = new SecretKeySpec(keyValue,ALGO);
         
         return key;
-    }            
+    }
+    
+    public static void main(String[] args) {
+        Hash hash = new Hash();
+        
+        String password = "fred";
+        
+        String salt = "vbjvjdhi9768430g";
+        
+        String salted = password + salt;
+        
+        System.out.println(hash.hash(salted));
+                
+    }
 }
