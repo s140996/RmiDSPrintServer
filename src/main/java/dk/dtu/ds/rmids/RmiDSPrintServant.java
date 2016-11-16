@@ -10,7 +10,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -278,7 +280,10 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
             }
             
             PrintWriter pw = new PrintWriter(new FileWriter(logFile, true));
-            pw.append(username + " has used method: " + method + ". Time: " + System.currentTimeMillis() + "\n");
+            long ms = System.currentTimeMillis();
+            SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyyy HH:mm:ss");
+            Date result = new Date(ms);
+            pw.append(username + " has used method: " + method + ". Time: " + sdf.format(result) + "\n");
             pw.close();
             System.out.println("Done writing");
         }
