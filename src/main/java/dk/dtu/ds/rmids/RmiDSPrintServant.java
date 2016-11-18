@@ -46,11 +46,12 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
         System.out.println("Må der printes? " + access.isPrint());
         if (access != null && access.isPrint() == true)
         {
-            writeLogfile("Print");
+            writeLogfile("Print - Access granted");
             return "Filename: " + filename + " was printed on: " + "Printername: " + printer;
         }
         else
-        {            
+        {   
+            writeLogfile("Print - Access denied");
             return "Access Denied";
         }
     }
@@ -60,12 +61,13 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
     {
         if (access != null && access.isQueue())
         {
-            writeLogfile("Queue");
+            writeLogfile("Queue - Access granted");
             return "Queue";
         }
         else
         {
-           return "Access Denied!"; 
+            writeLogfile("Queue - Access denied");
+            return "Access Denied!"; 
         }
     }
     
@@ -74,11 +76,12 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
     {
         if (access != null && access.isTopQueue() == true)
         {
-            writeLogfile("Top Queue");
+            writeLogfile("Top Queue - Access granted");
             System.out.println("Top Queue");
         }
         else
         {
+            writeLogfile("Top Queue - Access denied");
             System.out.println("Access Denied!"); 
         }
     }
@@ -88,11 +91,12 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
     {
         if (access != null && access.isStart())
         {
-            writeLogfile("Start");
+            writeLogfile("Start - Access granted");
             System.out.println("Start");
         }
         else
         {
+            writeLogfile("Start - Access denied");
             System.out.println("Access Denied!"); 
         }
     }
@@ -102,11 +106,12 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
     {
         if (access != null && access.isStop())
         {
-            writeLogfile("Stop");
+            writeLogfile("Stop - Access granted");
             System.out.println("Stop");
         }
         else
         {
+            writeLogfile("Stop - Access denied");
             System.out.println("Access Denied!"); 
         }
     }
@@ -116,11 +121,12 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
     {
         if (access != null && access.isRestart())
         {
-            writeLogfile("Restart");
+            writeLogfile("Restart - Access granted");
             System.out.println("Restart");
         }
         else
         {
+            writeLogfile("Restart - Access denied");
             System.out.println("Access Denied!"); 
         }
     }
@@ -130,11 +136,12 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
     {
         if (access != null && access.isStatus())
         {
-            writeLogfile("Status");
+            writeLogfile("Status - Access granted");
             System.out.println("Status");
         }
         else
         {
+            writeLogfile("Status - Access denied");
             System.out.println("Access Denied!"); 
         }
     }
@@ -144,11 +151,12 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
     {
         if (access != null && access.isReadConfig())
         {
-            writeLogfile("Read Config");
+            writeLogfile("Read Config - Access granted");
             System.out.println("Read Config");
         }
         else
         {
+            writeLogfile("Read Config - Access denied");
             System.out.println("Access Denied!"); 
         }
     }
@@ -158,11 +166,12 @@ public class RmiDSPrintServant extends UnicastRemoteObject implements RmiDSPrint
     {
         if (access != null && access.isSetConfig())
         {
-            writeLogfile("Set Config");
+            writeLogfile("Set Config - Access granted");
             System.out.println("Set Config");
         }
         else
         {
+            writeLogfile("Set Config - Access denied");
             System.out.println("Access Denied!"); 
         }
     }
