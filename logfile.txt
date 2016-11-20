@@ -1,101 +1,56 @@
-Steen has used method: Login. Time: 1478194281868
-Steen has used method: Print. Time: 1478194283678
-Steen has used method: Restart. Time: 1478194284680
-Steen has used method: Stop. Time: 1478194285383
-Steen has used method: Start. Time: 1478194286085
-Anders has used method: Login. Time: 1478194363033
-Anders has used method: Stop. Time: 1478194365071
-Anders has used method: Top Queue. Time: 1478194365874
-Anders has used method: Print. Time: 1478194366578
-Christoffer has used method: Login. Time: 1478194427968
-Christoffer has used method: Stop. Time: 1478194429471
-Christoffer has used method: Start. Time: 1478194430172
-Christoffer has used method: Print. Time: 1478194430674
-Christoffer has used method: Queue. Time: 1478194431477
-Wannabe has used method: Login. Time: 1478194460267
-Wannabe has used method: Stop. Time: 1478194461701
-Wannabe has used method: Start. Time: 1478194462402
-Wannabe has used method: Print. Time: 1478194463303
-Wannabe has used method: Login. Time: 1478209891520
-Wannabe has used method: Start. Time: 1478209893352
-Wannabe has used method: Top Queue. Time: 1478209895042
-Wannabe has used method: Print. Time: 1478209895877
-Wannabe has used method: Restart. Time: 1478209897044
-Steen has used method: Login. Time: 1478250367596
-Steen has used method: Print. Time: 1478250369637
-Steen has used method: Print. Time: 1478250370540
-Steen has used method: Print. Time: 1478250371443
-Steen has used method: Print. Time: 1478250372245
-Steen has used method: Print. Time: 1478250373048
-Steen has used method: Print. Time: 1478250373850
-Steen has used method: Print. Time: 1478250374654
-Steen has used method: Print. Time: 1478250375455
-Steen has used method: Print. Time: 1478250376156
-Steen has used method: Print. Time: 1478250376958
-Steen has used method: Login. Time: 1478250447656
-Steen has used method: Print. Time: 1478250449262
-Steen has used method: Login. Time: 1478250512085
-Steen has used method: Print. Time: 1478250513615
-Steen has used method: Print. Time: 1478250514416
-Steen has used method: Print. Time: 1478250515016
-Steen has used method: Print. Time: 1478250515718
-Steen has used method: Print. Time: 1478250516420
-Steen has used method: Print. Time: 1478250517121
-Steen has used method: Print. Time: 1478250517823
-Steen has used method: Print. Time: 1478250518524
-Steen has used method: Print. Time: 1478250519226
-Steen has used method: Print. Time: 1478250519926
-Anders has used method: Login. Time: 1478386512981
-Anders has used method: Start. Time: 1478386528363
-Anders has used method: Stop. Time: 1478386543538
-Anders has used method: Login. Time: 1478387456257
-Anders has used method: Print. Time: 1478387500641
-Anders has used method: Print. Time: 1478387622589
-Anders has used method: Login. Time: 1478387693274
-Anders has used method: Login. Time: 1478387912287
-Anders has used method: Print. Time: 1478387954041
-Anders has used method: Login. Time: 1478388126993
-Anders has used method: Print. Time: 1478388129081
-Steen has used method: Login. Time: 1478423570770
-Steen has used method: Print. Time: 1478423575486
-Steen has used method: Queue. Time: 1478423584912
-Steen has used method: Top Queue. Time: 1478423592030
-Steen has used method: Start. Time: 1478423596044
-Steen has used method: Stop. Time: 1478423600255
-Steen has used method: Restart. Time: 1478423602562
-Steen has used method: Status. Time: 1478423606772
-Steen has used method: Print. Time: 1478423614089
-Steen has used method: Login. Time: 1478427186093
-Steen has used method: Queue. Time: 1478427191647
-Christoffer has used method: Login. Time: 1478449475662
-Christoffer has used method: Print. Time: 1478449478039
-Christoffer has used method: Restart. Time: 1478449480647
-Christoffer has used method: Start. Time: 1478449481450
-Steen has used method: Login. Time: 1478449843025
-Steen has used method: Print. Time: 1478449857171
-Steen has used method: Login. Time: 1478449919733
-Steen has used method: Print. Time: 1478449925570
-Steen has used method: Login. Time: 1478451298931
-Steen has used method: Print. Time: 1478451300410
-Alice has used method: Login. Time: 1478706908692
-Alice has used method: Stop. Time: 1478706926664
-Alice has used method: Start. Time: 1478706940861
-Alice has used method: Stop. Time: 1478706942515
-Alice has used method: Restart. Time: 1478706943857
-Alice has used method: Status. Time: 1478706948007
-George has used method: Login. Time: 1478707046133
-George has used method: Restart. Time: 1478707071240
-George has used method: Stop. Time: 1478707073924
-George has used method: Status. Time: 1478707075872
-George has used method: Stop. Time: 1478707079907
-George has used method: Restart. Time: 1478707081455
-Alice has used method: Login. Time: 1478707536381
-George has used method: Login. Time: 1478707856711
-Alice has used method: Login. Time: 1478708045563
-Alice has used method: Login. Time: 1478708140966
-Alice has used method: Login. Time: 1478708458868
-Alice has used method: Login. Time: 1478708725868
-Fred has used method: Login. Time: 1478708930722
-Fred has used method: Login. Time: 1478709079339
-Fred has used method: Print. Time: 1478709080869
-Fred has used method: Queue. Time: 1478709099999
+Alice has used method: Login. Time: nov. 20, 2016 11:03:03
+Alice has used method: Print - Access granted. Time: nov. 20, 2016 11:03:06
+Alice has used method: Queue - Access granted. Time: nov. 20, 2016 11:03:07
+Alice has used method: Top Queue - Access granted. Time: nov. 20, 2016 11:03:08
+Alice has used method: Start - Access granted. Time: nov. 20, 2016 11:03:08
+Alice has used method: Stop - Access granted. Time: nov. 20, 2016 11:03:12
+Alice has used method: Restart - Access granted. Time: nov. 20, 2016 11:03:13
+Alice has used method: Status - Access granted. Time: nov. 20, 2016 11:03:14
+George has used method: Login. Time: nov. 20, 2016 11:03:29
+George has used method: Print - Access granted. Time: nov. 20, 2016 11:03:31
+George has used method: Queue - Access granted. Time: nov. 20, 2016 11:03:32
+George has used method: Top Queue - Access denied. Time: nov. 20, 2016 11:03:32
+George has used method: Start - Access granted. Time: nov. 20, 2016 11:03:33
+George has used method: Stop - Access granted. Time: nov. 20, 2016 11:03:33
+George has used method: Restart - Access granted. Time: nov. 20, 2016 11:03:34
+George has used method: Status - Access denied. Time: nov. 20, 2016 11:03:35
+Cecilia has used method: Login. Time: nov. 20, 2016 11:03:52
+Cecilia has used method: Print - Access granted. Time: nov. 20, 2016 11:03:53
+Cecilia has used method: Queue - Access granted. Time: nov. 20, 2016 11:03:54
+Cecilia has used method: Top Queue - Access granted. Time: nov. 20, 2016 11:03:55
+Cecilia has used method: Start - Access denied. Time: nov. 20, 2016 11:03:55
+Cecilia has used method: Stop - Access denied. Time: nov. 20, 2016 11:03:56
+Cecilia has used method: Restart - Access granted. Time: nov. 20, 2016 11:03:57
+Cecilia has used method: Status - Access denied. Time: nov. 20, 2016 11:03:57
+Ida has used method: Login. Time: nov. 20, 2016 11:04:15
+Ida has used method: Print - Access granted. Time: nov. 20, 2016 11:04:16
+Ida has used method: Queue - Access granted. Time: nov. 20, 2016 11:04:17
+Ida has used method: Top Queue - Access granted. Time: nov. 20, 2016 11:04:19
+Ida has used method: Start - Access denied. Time: nov. 20, 2016 11:04:20
+Ida has used method: Stop - Access denied. Time: nov. 20, 2016 11:04:21
+Ida has used method: Restart - Access granted. Time: nov. 20, 2016 11:04:21
+Ida has used method: Status - Access denied. Time: nov. 20, 2016 11:04:22
+Henry has used method: Login. Time: nov. 20, 2016 11:04:50
+Henry has used method: Print - Access granted. Time: nov. 20, 2016 11:04:52
+Henry has used method: Queue - Access granted. Time: nov. 20, 2016 11:04:53
+Henry has used method: Top Queue - Access denied. Time: nov. 20, 2016 11:04:54
+Henry has used method: Start - Access denied. Time: nov. 20, 2016 11:04:54
+Henry has used method: Stop - Access denied. Time: nov. 20, 2016 11:04:55
+Henry has used method: Restart - Access denied. Time: nov. 20, 2016 11:04:56
+Henry has used method: Status - Access denied. Time: nov. 20, 2016 11:04:56
+David has used method: Login. Time: nov. 20, 2016 11:06:29
+David has used method: Print - Access granted. Time: nov. 20, 2016 11:06:31
+David has used method: Queue - Access granted. Time: nov. 20, 2016 11:06:31
+David has used method: Top Queue - Access denied. Time: nov. 20, 2016 11:06:32
+David has used method: Start - Access denied. Time: nov. 20, 2016 11:06:32
+David has used method: Stop - Access denied. Time: nov. 20, 2016 11:06:33
+David has used method: Restart - Access denied. Time: nov. 20, 2016 11:06:33
+David has used method: Status - Access denied. Time: nov. 20, 2016 11:06:34
+Fred has used method: Login. Time: nov. 20, 2016 11:06:48
+Fred has used method: Print - Access granted. Time: nov. 20, 2016 11:06:50
+Fred has used method: Queue - Access granted. Time: nov. 20, 2016 11:06:50
+Fred has used method: Top Queue - Access denied. Time: nov. 20, 2016 11:06:51
+Fred has used method: Start - Access denied. Time: nov. 20, 2016 11:06:52
+Fred has used method: Stop - Access denied. Time: nov. 20, 2016 11:06:52
+Fred has used method: Restart - Access denied. Time: nov. 20, 2016 11:06:53
+Fred has used method: Status - Access denied. Time: nov. 20, 2016 11:06:53
