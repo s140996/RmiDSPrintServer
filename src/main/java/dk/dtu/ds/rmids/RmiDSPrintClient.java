@@ -100,10 +100,10 @@ public class RmiDSPrintClient
                 System.out.println("No status available!");
                 break;
                 
-                case 8:
+                case 8: print.readConfig(filename);
                 break;
                     
-                case 9:
+                case 9: print.setConfig(filename, filename);
                 break;
                     
                 case 10: sessionOn = false;
