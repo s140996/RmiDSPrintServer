@@ -1,0 +1,60 @@
+Alice has used method: Login. Time: nov. 20, 2016 11:18:22
+Alice has used method: Print - Access granted. Time: nov. 20, 2016 11:18:23
+Alice has used method: Queue - Access granted. Time: nov. 20, 2016 11:18:24
+Alice has used method: Top Queue - Access granted. Time: nov. 20, 2016 11:18:25
+Alice has used method: Start - Access granted. Time: nov. 20, 2016 11:18:26
+Alice has used method: Stop - Access granted. Time: nov. 20, 2016 11:18:27
+Alice has used method: Restart - Access granted. Time: nov. 20, 2016 11:18:28
+Alice has used method: Status - Access granted. Time: nov. 20, 2016 11:18:29
+Alice has used method: Read Config - Access granted. Time: nov. 20, 2016 11:18:30
+Alice has used method: Set Config - Access granted. Time: nov. 20, 2016 11:18:31
+Bob has used method: Login. Time: nov. 20, 2016 11:18:43
+Bob has used method: Print - Access denied. Time: nov. 20, 2016 11:18:44
+Bob has used method: Queue - Access denied. Time: nov. 20, 2016 11:18:45
+Bob has used method: Top Queue - Access denied. Time: nov. 20, 2016 11:18:46
+Bob has used method: Start - Access granted. Time: nov. 20, 2016 11:18:47
+Bob has used method: Stop - Access granted. Time: nov. 20, 2016 11:18:49
+Bob has used method: Restart - Access granted. Time: nov. 20, 2016 11:18:50
+Bob has used method: Status - Access granted. Time: nov. 20, 2016 11:18:51
+Bob has used method: Read Config - Access granted. Time: nov. 20, 2016 11:18:52
+Bob has used method: Set Config - Access granted. Time: nov. 20, 2016 11:18:53
+Cecilia has used method: Login. Time: nov. 20, 2016 11:19:09
+Cecilia has used method: Print - Access granted. Time: nov. 20, 2016 11:19:11
+Cecilia has used method: Queue - Access granted. Time: nov. 20, 2016 11:19:12
+Cecilia has used method: Top Queue - Access granted. Time: nov. 20, 2016 11:19:13
+Cecilia has used method: Start - Access denied. Time: nov. 20, 2016 11:19:13
+Cecilia has used method: Stop - Access denied. Time: nov. 20, 2016 11:19:14
+Cecilia has used method: Restart - Access granted. Time: nov. 20, 2016 11:19:15
+Cecilia has used method: Status - Access denied. Time: nov. 20, 2016 11:19:15
+Cecilia has used method: Read Config - Access denied. Time: nov. 20, 2016 11:19:16
+Cecilia has used method: Set Config - Access denied. Time: nov. 20, 2016 11:19:17
+David has used method: Login. Time: nov. 20, 2016 11:20:02
+David has used method: Print - Access granted. Time: nov. 20, 2016 11:20:04
+David has used method: Queue - Access granted. Time: nov. 20, 2016 11:20:05
+David has used method: Top Queue - Access denied. Time: nov. 20, 2016 11:20:06
+David has used method: Start - Access denied. Time: nov. 20, 2016 11:20:07
+David has used method: Stop - Access denied. Time: nov. 20, 2016 11:20:08
+David has used method: Restart - Access denied. Time: nov. 20, 2016 11:20:09
+David has used method: Status - Access denied. Time: nov. 20, 2016 11:20:09
+David has used method: Read Config - Access denied. Time: nov. 20, 2016 11:20:11
+David has used method: Set Config - Access denied. Time: nov. 20, 2016 11:20:14
+Fred has used method: Login. Time: nov. 20, 2016 11:27:27
+Fred has used method: Print - Access granted. Time: nov. 20, 2016 11:27:29
+Fred has used method: Queue - Access granted. Time: nov. 20, 2016 11:27:30
+Fred has used method: Top Queue - Access denied. Time: nov. 20, 2016 11:27:31
+Fred has used method: Start - Access denied. Time: nov. 20, 2016 11:27:31
+Fred has used method: Stop - Access denied. Time: nov. 20, 2016 11:27:32
+Fred has used method: Restart - Access denied. Time: nov. 20, 2016 11:27:33
+Fred has used method: Status - Access denied. Time: nov. 20, 2016 11:27:34
+Fred has used method: Read Config - Access denied. Time: nov. 20, 2016 11:27:35
+Fred has used method: Set Config - Access denied. Time: nov. 20, 2016 11:27:36
+George has used method: Login. Time: nov. 20, 2016 11:27:54
+George has used method: Print - Access granted. Time: nov. 20, 2016 11:27:56
+George has used method: Queue - Access granted. Time: nov. 20, 2016 11:27:56
+George has used method: Top Queue - Access denied. Time: nov. 20, 2016 11:27:57
+George has used method: Start - Access denied. Time: nov. 20, 2016 11:27:58
+George has used method: Stop - Access denied. Time: nov. 20, 2016 11:27:59
+George has used method: Restart - Access denied. Time: nov. 20, 2016 11:28:00
+George has used method: Status - Access denied. Time: nov. 20, 2016 11:28:01
+George has used method: Read Config - Access denied. Time: nov. 20, 2016 11:28:01
+George has used method: Set Config - Access denied. Time: nov. 20, 2016 11:28:02
